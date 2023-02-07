@@ -1,0 +1,27 @@
+﻿@model Product
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row justify-content-center pt-3">
+    <div class="col-md-8">
+        <div class="card justify-content-center">
+            <div class="card-header">@Model.ImagePath.Split(",", StringSplitOptions.RemoveEmptyEntries)<h1> @Model.Name Details</h1></div>
+
+            <div class="card-body ">
+               <div class="row">
+                    <div class="col"><p>ID: @Model.Id</p></div>
+                    <div class="col">Company: @Model.ModelName</div>
+                    <div class="col">Color: @Model.Color</div>
+                    <div class="col"><p>Category: 
+                            @foreach (var cat in Model.Categorys)
+                            {
+                                <em>@cat.Name</em>
+                            }</p></div>
+                    <div class="col"><p>Price: @Model.Price | Quantity: @Model.Quantity</p></div>
+               </div>
+                <div class="row"><p>Desc: @Model.Desc</p></div>
+            </div>
+        </div>
+    </div>
+</div>        

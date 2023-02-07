@@ -1,0 +1,97 @@
+* Roles
+#+begin_src plantuml :file roles.png
+  @startuml
+  'header
+  title Roles
+  left to right direction
+
+  'actors
+  actor Customer as c
+  skinparam actorStyle awesome
+  actor Administrator as a
+
+  'usecases
+  usecase "Buy Products" as UC1
+  usecase "Offer Products" as UC2
+
+  'relationships
+  c --> UC1
+  a --> UC2
+  @enduml
+#+end_src
+* Functionalities
+** Customer
+#+begin_src plantuml :file custo_funcs.png
+  @startuml
+  left to right direction
+  title Customer Functionalities
+  actor Customer as c
+
+  'View Products
+  usecase "View all offered products" as UC01
+  usecase "filter Products list" as UC02
+  usecase "Sort Products list" as UC03
+  'Cart
+  usecase "Add products" as UC04
+  usecase "Remove products" as UC05
+  usecase "Shows total cost" as UC06
+  usecase "Shows quantity of each product" as UC07
+  'Checkout
+  usecase "Print Receipt" as UC08
+  'Personal Account
+  usecase "Create Customer Account" as UC09
+  usecase "Signin as Customer" as UC10
+  usecase "Signout" as UC11
+  usecase "See Shopping History" as UC12
+
+  c --> UC01
+  c --> UC02
+  c --> UC03
+  c --> UC04
+  c --> UC05
+  c --> UC06
+  c --> UC07
+  c --> UC08
+  c --> UC09
+  c --> UC10
+  c --> UC11
+  c --> UC12
+  @enduml
+#+end_src
+** Administrator
+#+begin_src plantuml :file admin_funcs.png
+  @startuml
+  title Administartor Functionalities
+  left to right direction
+  skinparam actorStyle awesome
+  actor Administrator as a
+
+  'Orders
+  usecase "Update a pending order" as UC01
+  usecase "See\nall previous orders" as UC02
+  usecase "Filter\nall orders\nby status" as UC03
+  'products
+  usecase "Create a new Product" as UC04
+  usecase "Update an existed Product" as UC05
+  'Account
+  usecase "Signin as Administrator" as UC06
+  usecase "Create a new admin" as UC07
+  usecase "Signout" as UC08
+
+  a --> UC01
+  a --> UC02
+  a --> UC03
+  a --> UC04
+  a --> UC05
+  a --> UC06
+  a --> UC07
+  a --> UC08
+  
+  @enduml
+#+end_src
+* Front End
+** Admin Views
+** React Component
+* BackEnd
+** Controller
+** Database

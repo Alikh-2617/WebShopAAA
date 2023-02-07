@@ -1,0 +1,42 @@
+﻿@model OrderViewModel
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card justify-content-center">
+            <div class="card-header"><h1>@Model.Detail.Id</h1></div>
+            
+            <div class="card-body ">
+                @if (Model.Products.Count != 0)
+                {
+                    <a asp-action="Pick" asp-route-id="@Model.Detail.Id" class="btn btn-primary">Pick</a>
+                    <hr />
+            
+                    <table class="table table-dark table-striped">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Color</th>
+                                <th>Quantity </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Products)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.Name</td>
+                                    <td>@item.Color</td>
+                                    <td>@item.Quantity </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }else
+                {
+                    <p>No item in the order</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>

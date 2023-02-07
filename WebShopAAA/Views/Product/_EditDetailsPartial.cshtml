@@ -1,0 +1,91 @@
+﻿@model Product
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row justify-content-center pt-3">
+    <div class="col-md-8">
+        <div class="card justify-content-center">
+            <div class="card-header"><h1>Edit Product</h1></div>
+
+            <div class="card-body ">
+                <form asp-controller="Product" asp-action="Edit" method="post">
+                    <input asp-for="Id" type="hidden" />
+                    <div class="row mb-3">
+                        <label asp-for="Name" class="col-md-4 col-form-label text-md-end"></label>
+                        <div class="col-md-6">
+                            <input asp-for="Name" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label asp-for="ImagePath" class="col-md-4 col-form-label text-md-end"></label>
+                        <div class="col-md-6">
+                            <input asp-for="ImagePath" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label asp-for="ModelName" class="col-md-4 col-form-label text-md-end">Company</label>
+                        <div class="col-md-6">
+                            <input asp-for="ModelName" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label asp-for="Color" class="col-md-4 col-form-label text-md-end"></label>
+                        <div class="col-md-6">
+                            <input asp-for="Color" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label asp-for="Price" class="col-md-4 col-form-label text-md-end"></label>
+                        <div class="col-md-6">
+                            <input asp-for="Price" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label asp-for="Quantity" class="col-md-4 col-form-label text-md-end"></label>
+                        <div class="col-md-6">
+                            <input asp-for="Quantity" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        @*<label asp-for="Categorys" class="col-md-4 col-form-label text-md-end"></label>
+                        <div class="col-md-6">
+                            <select name="cat" asp-items="@ViewBag.Category">Select a Category</select>
+                            @*<select id="city">
+                                @foreach (var item in ViewBag.Test as IList<City>)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            </select>*@
+                            @*<select id="categorys">
+                                <option value="">Select a Category</option>
+                                @foreach (var item in ViewBag.Category)
+                                {
+                                    @if (ViewBag.cat == item.Id)
+                                    {
+                                        <option selected value="@item.Id">@item.Name</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.Id">@item.Name</option>
+                                    }
+                                }
+                            </select>
+                        </div>*@
+                    </div>
+                    <div class="row mb-3">
+                        <label asp-for="Desc" class="col-md-4 col-form-label text-md-end"></label>
+                        <div class="col-md-6">
+                            <textarea asp-for="Desc" class="form-control" required></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-0">
+                        <div class="col-md-6 offset-md-4">
+                            <input type="submit" class="btn btn-success" value="Save" />
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
